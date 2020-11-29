@@ -8,4 +8,7 @@
     <string name="password">Password</string>
     <string name="welcome_to_the_marvel_hq_s">Welcome to the Marvel HQ\'s</string>
     <string name="remember">Remember</string>
+    <string name="register">Register</string>
+    <string name="save">SAVE</string>
+    <string name="name">Name</string>
 </resources>
