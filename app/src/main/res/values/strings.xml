@@ -11,4 +11,7 @@
     <string name="register">Register</string>
     <string name="save">SAVE</string>
     <string name="name">Name</string>
+    <string name="empty_email">Email não preenchido</string>
+    <string name="empty_password">Senha não preenchida</string>
+    <string name="empty_name">Nome não preenchido</string>
 </resources>

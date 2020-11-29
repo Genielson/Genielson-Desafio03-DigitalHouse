@@ -62,6 +62,7 @@
                     app:hintTextColor="@color/colorRedTop">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtFieldEmailLoginContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -78,6 +79,7 @@
                     app:hintTextColor="@color/colorRedTop">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtFieldPasswordLoginContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
