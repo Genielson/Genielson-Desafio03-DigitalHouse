@@ -1,4 +1,4 @@
-package com.example.desafio03digitalhouse.home.login
+package com.example.desafio03digitalhouse.home.view.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,9 +34,7 @@ class LoginFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.containedButtonRegister).setOnClickListener {
-            if(validaDadosRegister(view)) {
                 navController.navigate(R.id.action_loginFragment_to_registerFragment)
-            }
         }
 
     }

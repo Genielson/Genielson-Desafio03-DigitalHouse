@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.desafio03digitalhouse.home.login.LoginFragment"
+        android:name="com.example.desafio03digitalhouse.home.view.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.desafio03digitalhouse.home.register.RegisterFragment"
+        android:name="com.example.desafio03digitalhouse.home.view.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.desafio03digitalhouse.home.main.HomeFragment"
+        android:name="com.example.desafio03digitalhouse.home.view.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>
