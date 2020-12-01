@@ -1,9 +1,18 @@
 package com.example.desafio03digitalhouse.home.repository
 
+
+import com.example.desafio03digitalhouse.home.api.MY_PUBLIC_KEY
+import com.example.desafio03digitalhouse.home.api.getHash
+import com.example.desafio03digitalhouse.home.api.getTimeStamp
+
 class ComicRepository {
 
-    val client = ComicEndpoint.Endpoint
+    private val comic = ComicEndpoint.Endpoint
 
-    suspend fun getComics() = client.getComics()
-
+    suspend fun getComics() = comic.getComics("comic",
+        "comic",
+        true,
+        getTimeStamp(),
+        getHash(),
+        MY_PUBLIC_KEY)
 }
