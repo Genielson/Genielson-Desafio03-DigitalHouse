@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 class ComicViewModel(private val repository: ComicRepository):ViewModel() {
 
      private var quadrinhos : List<ComicModel> = listOf()
+     private lateinit var quadrinhoUnico : ComicModel
 
      fun getComics() = liveData(Dispatchers.IO){
         try {
@@ -18,8 +19,24 @@ class ComicViewModel(private val repository: ComicRepository):ViewModel() {
             quadrinhos = response.data.results
             emit(quadrinhos)
 
-        }catch(ex:Exception){
-            println("Erro : "+ex.message)
+        }catch(e:Exception){
+            println("Erro : ${e.message} ")
+        }
+
+    }
+
+    fun getUniqueComic(id:Int) = liveData(Dispatchers.IO) {
+
+        try{
+
+            var response = repository.getUniqueComic(id)
+
+            quadrinhoUnico = response.data.results[0]
+
+            emit(quadrinhoUnico)
+            
+        }catch (e:Exception){
+            println("Erro : ${e.message}")
         }
 
     }

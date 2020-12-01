@@ -15,4 +15,14 @@ class ComicRepository {
         getTimeStamp(),
         getHash(),
         MY_PUBLIC_KEY)
+
+
+    suspend fun getUniqueComic(id:Int) = comic.getUniqueComic(id,"comic",
+        "comic",
+        true,
+        getTimeStamp(),
+        getHash(),
+        MY_PUBLIC_KEY)
+
+
 }
