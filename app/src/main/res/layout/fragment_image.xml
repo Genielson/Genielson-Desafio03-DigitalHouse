@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imgClose"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginStart="14dp"
+        android:layout_width="@dimen/dimen_28"
+        android:layout_height="@dimen/dimen_28"
+        android:layout_marginTop="@dimen/dimen_22"
+        android:layout_marginStart="@dimen/dimen_14"
         android:src="@drawable/ic_baseline_close_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,12 +22,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="78dp"
-        android:layout_marginBottom="22dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginTop="@dimen/dimen_78"
+        android:layout_marginBottom="@dimen/dimen_22"
+        android:layout_marginStart="@dimen/dimen_14"
+        android:layout_marginEnd="@dimen/dimen_14"
         android:background="@color/colorWhite"
-        android:padding="6dp"
+        android:padding="@dimen/dimen_06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgClose">
 

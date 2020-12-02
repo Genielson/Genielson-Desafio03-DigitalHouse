@@ -22,14 +22,12 @@ class ComicAdapter(private var quadrinhos: MutableList<ComicModel>,private var l
         fun bind(quadrinho:ComicModel){
 
             numero.text = "# ${quadrinho.id}"
-
             val pathCompleteComic = "${quadrinho.thumbnail.path}/portrait_uncanny.${quadrinho.thumbnail.extension}"
 
             Picasso.get()
                 .load(pathCompleteComic)
                 .into(imagem)
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -47,5 +45,4 @@ class ComicAdapter(private var quadrinhos: MutableList<ComicModel>,private var l
             listener(quadrinhos[position])
         }
     }
-
 }

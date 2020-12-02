@@ -19,20 +19,20 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
     <ImageView
         android:id="@+id/imgBackgroundComic"
         android:layout_width="match_parent"
-        android:layout_height="222dp"
+        android:layout_height="@dimen/dimen_222"
         android:contentDescription="@string/background_image" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="82dp"
-        android:layout_marginLeft="20dp">
+        android:layout_marginTop="@dimen/dimen_82"
+        android:layout_marginLeft="@dimen/dimen_20">
 
         <ImageView
             android:id="@+id/imgThumbnail"
             android:layout_width="wrap_content"
             android:background="@color/colorWhite"
-            android:padding="4dp"
+            android:padding="@dimen/dimen_4"
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_thumbnail" />
 
@@ -40,21 +40,21 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
 
     <ImageView
         android:id="@+id/btnBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginStart="@dimen/dimen_10"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:layout_marginTop="@dimen/dimen_10" />
 
 </FrameLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="0dp"
+    android:layout_height="@dimen/dimen_0"
     android:layout_weight="1"
     android:orientation="vertical"
-    android:paddingHorizontal="20dp"
+    android:paddingHorizontal="@dimen/dimen_20"
     app:layout_constraintBottom_toTopOf="@id/lnBottomtext"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -68,19 +68,19 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
         android:ellipsize="end"
         android:maxLines="2"
         android:textColor="@color/colorWhite"
-        android:textSize="25sp"
+        android:textSize="@dimen/dimen_text_25"
         android:textStyle="bold"
         tools:text="AMAZING SPIDER-MAN (2014) #1 (mhan variant)" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dimen_0"
         android:layout_weight="1">
         <TextView
             android:id="@+id/txtDescriptionComic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
+            android:textSize="@dimen/dimen_text_17"
             android:textColor="@color/colorWhite"
             tools:text="@tools:sample/lorem/random" />
     </ScrollView>
@@ -91,7 +91,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingVertical="20dp"
+    android:paddingVertical="@dimen/dimen_20"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
@@ -104,41 +104,41 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/published"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="@dimen/dimen_20" />
 
         <TextView
             android:id="@+id/txtDatePublishedComic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="6dp" />
+            android:layout_marginLeft="@dimen/dimen_6" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="6dp">
+        android:layout_marginVertical="@dimen/dimen_6">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/price"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
-            android:layout_marginLeft="22dp" />
+            android:layout_marginLeft="@dimen/dimen_22" />
 
         <TextView
             android:id="@+id/txtPriceComic"
             android:layout_width="wrap_content"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="@dimen/dimen_5" />
     </LinearLayout>
 
     <LinearLayout
@@ -149,19 +149,19 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pages"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="@dimen/dimen_20" />
 
         <TextView
             android:id="@+id/txtComicCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="@dimen/dimen_text_15"
             android:textColor="@color/colorWhite"
             tools:text="38"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="@dimen/dimen_5" />
     </LinearLayout>
 </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

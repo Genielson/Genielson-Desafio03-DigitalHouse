@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher_background"
             android:background="@color/colorWhite"
-            android:padding="3dp"
+            android:padding="@dimen/dimen_3"
         />
 
         <TextView
@@ -21,8 +21,8 @@
         android:textColor="@color/colorWhite"
         android:text=""
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:textSize="@dimen/dimen_text_15"
         />
 
 </LinearLayout>

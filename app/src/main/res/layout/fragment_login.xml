@@ -11,7 +11,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/dimen_20"
         android:background="@drawable/title_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,11 +24,11 @@
             android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/dimen_20"
             android:gravity="center"
             android:text="@string/welcome_to_the_marvel_hq_s"
             android:textColor="@color/colorWhite"
-            android:textSize="26sp"
+            android:textSize="@dimen/dimen_text_26"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
-            android:layout_marginTop="30dp"
-            app:cardCornerRadius="15dp"
+            android:layout_marginTop="@dimen/dimen_30"
+            app:cardCornerRadius="@dimen/dimen_15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtTitle">
@@ -55,8 +55,8 @@
                     android:id="@+id/txtFieldEmailLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_marginTop="70dp"
+                    android:layout_margin="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_70"
 
                     android:hint="@string/email"
                     app:hintTextColor="@color/colorRedTop">
@@ -73,9 +73,9 @@
                     android:id="@+id/txtFieldPasswordLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_20"
                     android:hint="@string/password"
                     app:hintTextColor="@color/colorRedTop">
 
@@ -90,9 +90,9 @@
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_20"
                     android:checked="true"
                     android:text="@string/remember"
                     android:textColor="@color/colorRedTop" />
@@ -101,8 +101,8 @@
                     android:id="@+id/containedButtonLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
                     android:background="@color/colorAccent"
                     android:text="@string/log_in"
                     android:textColor="@color/colorWhite"
@@ -113,9 +113,9 @@
                     style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_20"
                     android:background="@color/colorWhite"
                     android:textAllCaps="false"
                     android:text="@string/create_account"
@@ -130,55 +130,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-    <!--
-
-    <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txtTitleLogin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/colorWhite">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtFieldEmailLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:hint="Email"
-                app:hintTextColor="@color/colorRedTop">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtFieldPasswordLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                app:hintTextColor="@color/colorRedTop">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Remember"
-                android:textColor="@color/colorRedTop" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

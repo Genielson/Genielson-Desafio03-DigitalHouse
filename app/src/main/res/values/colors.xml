@@ -8,4 +8,6 @@
     <color name="colorBlack">#000</color>
     <color name="colorGrayBackgroundLogin">#00162C</color>
     <color name="colorGrayText">#343F4B</color>
+    <color name="colorRedToolbar">#EA2427</color>
+
 </resources>
