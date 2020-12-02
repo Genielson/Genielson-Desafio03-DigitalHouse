@@ -1,12 +1,15 @@
 package com.example.desafio03digitalhouse.home.view.informationcomic
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -33,8 +36,7 @@ class InfoComicFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val idrecovery = arguments?.getString("id")!!.toInt()
-
+        val idrecovery = arguments?.getInt("id")
         setButtonBack(view)
 
         _viewModel = ViewModelProvider(
@@ -42,10 +44,11 @@ class InfoComicFragment : Fragment() {
             ComicViewModel.ComicViewModelFactory(ComicRepository())
         ).get(ComicViewModel::class.java)
 
-        _viewModel.getUniqueComic(idrecovery).observe(viewLifecycleOwner) {
-            exibirDados(view,it)
+        if (idrecovery != null) {
+            _viewModel.getUniqueComic(idrecovery).observe(viewLifecycleOwner) {
+                exibirDados(view,it)
+            }
         }
-
     }
 
     private fun setButtonBack(view:View){
@@ -66,22 +69,40 @@ class InfoComicFragment : Fragment() {
         val published = view.findViewById<TextView>(R.id.txtDatePublishedComic)
         val price = view.findViewById<TextView>(R.id.txtPriceComic)
         val count = view.findViewById<TextView>(R.id.txtComicCount)
-        val image = view.findViewById<ImageButton>(R.id.imgThumbnail)
+        val image = view.findViewById<ImageView>(R.id.imgThumbnail)
         val background = view.findViewById<ImageView>(R.id.imgBackgroundComic)
+        val formatDate = item.dates[0].date.split("T")
+        val completePathExtension = "${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}"
+        val completePathExtensionBackground = "${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}"
 
         titulo.text = item.title
         description.text = item.description
-        published.text = item.dates[0].date
-        price.text = item.prices[0].price.toString()
+        published.text = formatDate[0]
+        price.text = "$ ${item.prices[0].price}"
         count.text = item.pageCount.toString()
 
         Picasso.get()
-            .load("${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}")
+            .load(completePathExtension)
             .into(image)
 
         Picasso.get()
-            .load("${item.images[0].path}/portrait_uncanny.${item.images[0].extension}")
+            .load(completePathExtensionBackground).
+             fit().
+             centerCrop()
             .into(background)
+
+        image.setOnClickListener {
+            mostrarImagemComic(it,completePathExtension)
+        }
+
+    }
+
+    private fun mostrarImagemComic(view:View, path:String){
+
+        val bundle = bundleOf("path" to path)
+
+        val navController = Navigation.findNavController(view)
+        navController.navigate(R.id.action_infoComicFragment_to_imageFragment,bundle)
     }
 
 }

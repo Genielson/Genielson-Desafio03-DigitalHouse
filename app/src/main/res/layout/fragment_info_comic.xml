@@ -26,31 +26,26 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="82dp"
-        android:background="@color/colorWhite"
-        android:padding="6dp"
         android:layout_marginLeft="20dp">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imgThumbnail"
-            android:layout_width="140dp"
-            android:layout_height="180dp"
-            android:padding="0dp"
-
+            android:layout_width="wrap_content"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/image_thumbnail" />
 
     </LinearLayout>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        android:tint="@color/colorWhite"
-        android:layout_marginLeft="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:contentDescription="@string/image_to_back" />
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
 
 </FrameLayout>
 
@@ -85,6 +80,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:id="@+id/txtDescriptionComic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="17sp"
             android:textColor="@color/colorWhite"
             tools:text="@tools:sample/lorem/random" />
     </ScrollView>
@@ -108,6 +104,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/published"
+            android:textSize="15sp"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:layout_marginLeft="20dp" />
@@ -116,6 +113,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:id="@+id/txtDatePublishedComic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:textColor="@color/colorWhite"
             android:layout_marginLeft="6dp" />
     </LinearLayout>
@@ -129,6 +127,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/price"
+            android:textSize="15sp"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:layout_marginLeft="22dp" />
@@ -136,9 +135,9 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
         <TextView
             android:id="@+id/txtPriceComic"
             android:layout_width="wrap_content"
+            android:textSize="15sp"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
-            tools:text="$ 5,99"
             android:layout_marginLeft="5dp" />
     </LinearLayout>
 
@@ -150,6 +149,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pages"
+            android:textSize="15sp"
             android:textColor="@color/colorWhite"
             android:textStyle="bold"
             android:layout_marginLeft="20dp" />
@@ -158,6 +158,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
             android:id="@+id/txtComicCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:textColor="@color/colorWhite"
             tools:text="38"
             android:layout_marginLeft="5dp" />

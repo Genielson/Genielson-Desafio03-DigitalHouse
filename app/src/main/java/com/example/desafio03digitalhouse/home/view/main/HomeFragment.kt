@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
 
         myadapter = ComicAdapter(listaPersonagem){
 
-            val bundle = bundleOf("id" to it.id)
+            val bundle = bundleOf("id" to it.id.toInt())
 
             val navigation = Navigation.findNavController(view)
 
