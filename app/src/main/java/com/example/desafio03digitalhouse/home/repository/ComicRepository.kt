@@ -23,6 +23,4 @@ class ComicRepository {
         getTimeStamp(),
         getHash(),
         MY_PUBLIC_KEY)
-
-
 }

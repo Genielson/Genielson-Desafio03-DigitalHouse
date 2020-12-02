@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import com.example.desafio03digitalhouse.R
 import com.squareup.picasso.Picasso
 
 
 class ImageFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,21 +26,16 @@ class ImageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val path = arguments?.getString("path")
+        val idrecovery = arguments?.getInt("id")
+        
         val image = view.findViewById<ImageView>(R.id.imgComicAll)
         Picasso.get().load(path).into(image)
 
-        view.findViewById<ImageView>(R.id.btnBack).setOnClickListener {
-            setButtonBack(view)
+        view.findViewById<ImageView>(R.id.imgClose).setOnClickListener {
+            val bundle = bundleOf("id" to idrecovery)
+            val navController = Navigation.findNavController(view)
+            navController.navigate(R.id.action_imageFragment_to_infoComicFragment,bundle)
         }
     }
-
-    private fun setButtonBack(view: View){
-
-        val navController = Navigation.findNavController(view)
-        navController.navigate(R.id.action_imageFragment_to_infoComicFragment)
-    }
-
-
-
 
 }

@@ -10,7 +10,6 @@ import com.example.desafio03digitalhouse.R
 
 class RegisterFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,5 +17,4 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
-
 }

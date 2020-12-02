@@ -30,30 +30,24 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView(view)
-
     }
 
     private fun setupRecyclerView(view: View){
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-
         val manager = GridLayoutManager(view.context,3)
-
         listaPersonagem = mutableListOf()
 
         myadapter = ComicAdapter(listaPersonagem){
 
             val bundle = bundleOf("id" to it.id.toInt())
-
             val navigation = Navigation.findNavController(view)
-
             navigation.navigate(R.id.action_homeFragment_to_infoComicFragment,bundle)
 
         }
@@ -64,7 +58,6 @@ class HomeFragment : Fragment() {
             adapter = myadapter
         }
 
-
         viewModel = ViewModelProvider(
             this,
             ComicViewModel.ComicViewModelFactory(ComicRepository())
@@ -73,16 +66,12 @@ class HomeFragment : Fragment() {
         viewModel.getComics().observe(viewLifecycleOwner) {
             exibirResultados(it)
         }
-
-
     }
 
     private fun exibirResultados(lista: List<ComicModel>) {
 
         lista.let { listaPersonagem.addAll(it) }
         myadapter.notifyDataSetChanged()
-
     }
-
 
 }

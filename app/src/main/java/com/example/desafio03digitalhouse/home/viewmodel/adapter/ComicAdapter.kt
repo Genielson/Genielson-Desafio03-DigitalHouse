@@ -21,10 +21,12 @@ class ComicAdapter(private var quadrinhos: MutableList<ComicModel>,private var l
         @SuppressLint("SetTextI18n")
         fun bind(quadrinho:ComicModel){
 
-            numero.text = "# "+quadrinho.id.toString()
+            numero.text = "# ${quadrinho.id}"
+
+            val pathCompleteComic = "${quadrinho.thumbnail.path}/portrait_uncanny.${quadrinho.thumbnail.extension}"
 
             Picasso.get()
-                .load("${quadrinho.thumbnail.path}/portrait_uncanny.${quadrinho.thumbnail.extension}")
+                .load(pathCompleteComic)
                 .into(imagem)
         }
 
@@ -43,9 +45,7 @@ class ComicAdapter(private var quadrinhos: MutableList<ComicModel>,private var l
         holder.itemView.setOnClickListener {
 
             listener(quadrinhos[position])
-
         }
     }
-
 
 }

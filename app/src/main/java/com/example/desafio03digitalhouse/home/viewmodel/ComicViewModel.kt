@@ -22,7 +22,6 @@ class ComicViewModel(private val repository: ComicRepository):ViewModel() {
         }catch(e:Exception){
             println("Erro : ${e.message} ")
         }
-
     }
 
     fun getUniqueComic(id:Int) = liveData(Dispatchers.IO) {
@@ -36,7 +35,6 @@ class ComicViewModel(private val repository: ComicRepository):ViewModel() {
         }catch (e:Exception){
             println("Erro : ${e.message}")
         }
-
     }
 
     class ComicViewModelFactory(private val repository: ComicRepository): ViewModelProvider.Factory {

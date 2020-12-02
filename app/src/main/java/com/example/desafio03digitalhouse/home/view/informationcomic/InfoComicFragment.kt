@@ -24,7 +24,6 @@ import com.squareup.picasso.Picasso
 class InfoComicFragment : Fragment() {
 
     private lateinit var _viewModel : ComicViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,6 +80,7 @@ class InfoComicFragment : Fragment() {
         price.text = "$ ${item.prices[0].price}"
         count.text = item.pageCount.toString()
 
+
         Picasso.get()
             .load(completePathExtension)
             .into(image)
@@ -92,14 +92,13 @@ class InfoComicFragment : Fragment() {
             .into(background)
 
         image.setOnClickListener {
-            mostrarImagemComic(it,completePathExtension)
+            mostrarImagemComic(it,completePathExtension,item.id)
         }
-
     }
 
-    private fun mostrarImagemComic(view:View, path:String){
+    private fun mostrarImagemComic(view:View, path:String, id:Int){
 
-        val bundle = bundleOf("path" to path)
+        val bundle = bundleOf("path" to path, "id" to id)
 
         val navController = Navigation.findNavController(view)
         navController.navigate(R.id.action_infoComicFragment_to_imageFragment,bundle)
