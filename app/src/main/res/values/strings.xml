@@ -14,4 +14,12 @@
     <string name="empty_email">Email não preenchido</string>
     <string name="empty_password">Senha não preenchida</string>
     <string name="empty_name">Nome não preenchido</string>
+    <string name="published">Published</string>
+    <string name="price">Price:</string>
+    <string name="pages">Pages:</string>
+    <string name="background_image">Background image</string>
+    <string name="image_to_back">Image to back</string>
+    <string name="image_thumbnail">Image thumbnail</string>
+    <string name="image_splash_screen">Image splash screen</string>
+    <string name="image_to_return">image to return</string>
 </resources>

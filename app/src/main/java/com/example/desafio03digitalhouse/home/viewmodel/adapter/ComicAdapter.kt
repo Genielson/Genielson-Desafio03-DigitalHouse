@@ -11,7 +11,7 @@ import com.example.desafio03digitalhouse.R
 import com.example.desafio03digitalhouse.home.model.ComicModel
 import com.squareup.picasso.Picasso
 
-class ComicAdapter(private var quadrinhos: MutableList<ComicModel>): RecyclerView.Adapter<ComicAdapter.ItemViewHolder>() {
+class ComicAdapter(private var quadrinhos: MutableList<ComicModel>,private var listener : (ComicModel) -> Unit): RecyclerView.Adapter<ComicAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(view: View):RecyclerView.ViewHolder(view){
 
@@ -33,15 +33,18 @@ class ComicAdapter(private var quadrinhos: MutableList<ComicModel>): RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_lista_comic,parent,false)
-
         return ItemViewHolder(view)
-
     }
 
     override fun getItemCount(): Int = quadrinhos.size
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(quadrinhos[position])
+        holder.itemView.setOnClickListener {
+
+            listener(quadrinhos[position])
+
+        }
     }
 
 

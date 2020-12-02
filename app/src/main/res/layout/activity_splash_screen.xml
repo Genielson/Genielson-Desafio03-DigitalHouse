@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/img_splash"
-        />
+        android:contentDescription="@string/image_splash_screen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,12 +29,10 @@ class ComicViewModel(private val repository: ComicRepository):ViewModel() {
 
         try{
 
-            var response = repository.getUniqueComic(id)
-
+            val response = repository.getUniqueComic(id)
             quadrinhoUnico = response.data.results[0]
-
             emit(quadrinhoUnico)
-            
+
         }catch (e:Exception){
             println("Erro : ${e.message}")
         }

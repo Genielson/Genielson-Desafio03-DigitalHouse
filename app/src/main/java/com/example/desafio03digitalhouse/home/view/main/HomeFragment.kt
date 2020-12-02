@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio03digitalhouse.R
@@ -46,7 +48,15 @@ class HomeFragment : Fragment() {
 
         listaPersonagem = mutableListOf()
 
-        myadapter = ComicAdapter(listaPersonagem)
+        myadapter = ComicAdapter(listaPersonagem){
+
+            val bundle = bundleOf("id" to it.id)
+
+            val navigation = Navigation.findNavController(view)
+
+            navigation.navigate(R.id.action_homeFragment_to_infoComicFragment,bundle)
+
+        }
 
         recyclerView.apply{
             setHasFixedSize(true)

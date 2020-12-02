@@ -25,5 +25,18 @@
         android:id="@+id/homeFragment"
         android:name="com.example.desafio03digitalhouse.home.view.main.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_infoComicFragment"
+            app:destination="@id/infoComicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoComicFragment"
+        android:name="com.example.desafio03digitalhouse.home.view.informationcomic.InfoComicFragment"
+        android:label="fragment_info_comic"
+        tools:layout="@layout/fragment_info_comic" >
+        <action
+            android:id="@+id/action_infoComicFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

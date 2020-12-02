@@ -41,9 +41,9 @@ class LoginFragment : Fragment() {
 
     private fun validaDadosLogin(view:View):Boolean{
 
-        var email = view.findViewById<TextInputEditText>(R.id.txtFieldEmailLoginContent)
+        val email = view.findViewById<TextInputEditText>(R.id.txtFieldEmailLoginContent)
 
-        var password = view.findViewById<TextInputEditText>(R.id.txtFieldPasswordLoginContent)
+        val password = view.findViewById<TextInputEditText>(R.id.txtFieldPasswordLoginContent)
 
         var resultado = true
 
@@ -58,35 +58,6 @@ class LoginFragment : Fragment() {
         }
 
         return resultado
-    }
-
-    private fun validaDadosRegister(view:View):Boolean{
-
-        var name = view.findViewById<TextInputEditText>(R.id.txtFieldNameRegisterContent)
-
-        var email = view.findViewById<TextInputEditText>(R.id.txtFieldEmailRegisterContent)
-
-        var password = view.findViewById<TextInputEditText>(R.id.txtFieldPasswordRegisterContent)
-
-        var resultado = true
-
-        if(name.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldNameRegister).error = getString(R.string.empty_name)
-            resultado = false
-        }
-
-        if(email.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldEmailRegister).error = getString(R.string.empty_email)
-            resultado = false
-        }
-
-        if(password.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldPasswordRegister).error = getString(R.string.empty_password)
-            resultado = false
-        }
-
-        return resultado
-
     }
 
 }
