@@ -104,11 +104,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/dimen_20"
                     android:layout_marginLeft="@dimen/dimen_20"
+                    app:errorEnabled="true"
                     android:layout_marginTop="@dimen/dimen_30"
                     android:hint="@string/name"
                     app:hintTextColor="@color/colorRedTop">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="text"
                         android:id="@+id/txtFieldNameRegisterContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -119,6 +121,8 @@
                     android:id="@+id/txtFieldEmailRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    android:layout_marginTop="@dimen/dimen_6"
                     android:layout_marginLeft="@dimen/dimen_20"
                     android:layout_marginRight="@dimen/dimen_20"
                     android:hint="@string/email"
@@ -136,6 +140,8 @@
                     android:id="@+id/txtFieldPasswordRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    android:layout_marginTop="@dimen/dimen_6"
                     android:layout_marginLeft="@dimen/dimen_20"
                     android:layout_marginRight="@dimen/dimen_20"
                     android:layout_marginBottom="@dimen/dimen_20"
@@ -143,6 +149,7 @@
                     app:hintTextColor="@color/colorRedTop">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPassword"
                         android:id="@+id/txtFieldPasswordRegisterContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -152,6 +159,7 @@
                     android:id="@+id/containedButtonLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6"
                     android:layout_marginLeft="@dimen/dimen_20"
                     android:layout_marginRight="@dimen/dimen_20"
                     android:layout_marginBottom="@dimen/dimen_20"

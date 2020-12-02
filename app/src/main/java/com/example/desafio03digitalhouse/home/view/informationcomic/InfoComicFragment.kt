@@ -1,14 +1,15 @@
 package com.example.desafio03digitalhouse.home.view.informationcomic
 
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -32,6 +33,7 @@ class InfoComicFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_info_comic, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -61,7 +63,9 @@ class InfoComicFragment : Fragment() {
         }
     }
 
-    private fun exibirDados(view:View,item: ComicModel){
+    @RequiresApi(Build.VERSION_CODES.N)
+    @SuppressLint("SetTextI18n")
+    private fun exibirDados(view:View, item: ComicModel){
 
         val titulo = view.findViewById<TextView>(R.id.txtTitleComic)
         val description = view.findViewById<TextView>(R.id.txtDescriptionComic)
@@ -75,7 +79,7 @@ class InfoComicFragment : Fragment() {
         val completePathExtensionBackground = "${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}"
 
         titulo.text = item.title
-        description.text = item.description
+        description.text = Html.fromHtml(item.description, Html.FROM_HTML_MODE_COMPACT)
         published.text = formatDate[0]
         price.text = "$ ${item.prices[0].price}"
         count.text = item.pageCount.toString()

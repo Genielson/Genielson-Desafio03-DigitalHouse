@@ -11,16 +11,31 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            />
+
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.desafio03digitalhouse.home.view.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:exitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.desafio03digitalhouse.home.view.main.HomeFragment"
@@ -37,6 +52,10 @@
         tools:layout="@layout/fragment_info_comic" >
         <action
             android:id="@+id/action_infoComicFragment_to_homeFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/stationary"
+            app:popExitAnim="@anim/slide_down"
             app:destination="@id/homeFragment" />
         <action
             android:id="@+id/action_infoComicFragment_to_imageFragment"
