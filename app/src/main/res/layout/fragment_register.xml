@@ -31,10 +31,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    android:contentDescription="@string/imagereturndescription" />
 
                 <TextView
-                    android:id="@+id/txtTittleRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimen_20"
@@ -82,7 +81,6 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
@@ -99,7 +97,6 @@
                 >
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtFieldNameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/dimen_20"
@@ -118,7 +115,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtFieldEmailRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true"
@@ -137,7 +133,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtFieldPasswordRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true"
@@ -187,7 +182,6 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"/>
 
     <ImageView
-        android:id="@+id/imgRegister"
         android:layout_width="@dimen/dimen_60"
         android:layout_height="@dimen/dimen_60"
         app:layout_constraintEnd_toEndOf="parent"
@@ -196,6 +190,7 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         android:src="@drawable/profile"
         android:scaleType="fitXY"
-        android:layout_marginTop="@dimen/dimen_120" />
+        android:layout_marginTop="@dimen/dimen_120"
+        android:contentDescription="@string/tolbardescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

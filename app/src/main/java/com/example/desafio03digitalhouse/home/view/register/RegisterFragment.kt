@@ -1,16 +1,15 @@
 package com.example.desafio03digitalhouse.home.view.register
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.desafio03digitalhouse.R
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
 
 class RegisterFragment : Fragment() {
@@ -54,17 +53,17 @@ class RegisterFragment : Fragment() {
         var resultado = true
 
         if(name.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldNameRegister).error = getString(R.string.empty_name)
+            name.error = getString(R.string.empty_name)
             resultado = false
         }
 
         if(email.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldEmailRegister).error = getString(R.string.empty_email)
+            email.error = getString(R.string.empty_email)
             resultado = false
         }
 
         if(password.text?.isBlank()!!){
-            view.findViewById<TextInputLayout>(R.id.txtFieldPasswordRegister).error = getString(R.string.empty_password)
+            password.error = getString(R.string.empty_password)
             resultado = false
         }
 
