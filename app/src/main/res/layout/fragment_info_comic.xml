@@ -20,6 +20,7 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
         android:id="@+id/imgBackgroundComic"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_222"
+        android:layout_marginBottom="@dimen/dimen_60"
         android:contentDescription="@string/background_image" />
 
     <LinearLayout
@@ -31,18 +32,18 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
 
         <ImageView
             android:id="@+id/imgThumbnail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@color/colorWhite"
-            android:padding="@dimen/dimen_4"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/image_thumbnail" />
+            android:contentDescription="@string/image_thumbnail"
+            android:padding="@dimen/dimen_4" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/btnBack"
-        android:layout_width="@dimen/dimen_50"
-        android:layout_height="@dimen/dimen_50"
+        android:layout_width="@dimen/dimen_30"
+        android:layout_height="@dimen/dimen_30"
         android:layout_marginStart="@dimen/dimen_10"
         android:src="@drawable/ic_baseline_arrow_back_24"
         android:layout_marginLeft="@dimen/dimen_10"
@@ -51,9 +52,10 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
 
 </FrameLayout>
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/contentBottom"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_0"
+    android:layout_height="wrap_content"
     android:layout_weight="1"
     android:orientation="vertical"
     android:paddingHorizontal="@dimen/dimen_20"
@@ -72,104 +74,119 @@ tools:context=".home.view.informationcomic.InfoComicFragment">
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/dimen_text_25"
         android:textStyle="bold"
-        tools:text="AMAZING SPIDER-MAN (2014) #1 (mhan variant)" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/framelayoutInfoImage"
+        tools:text="AMAZING SPIDER-MAN (2014) #1 (mhan variant)"
+        tools:ignore="NotSibling" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:id="@+id/scrollDescription"
+        android:layout_width="374dp"
+        android:layout_marginTop="@dimen/dimen_35"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleComic"
+        app:layout_constraintVertical_bias="1.0">
+
         <TextView
             android:id="@+id/txtDescriptionComic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/dimen_text_17"
-            android:textColor="@color/colorWhite"
-            tools:text="@tools:sample/lorem/random" />
+            tools:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa" />
     </ScrollView>
-</LinearLayout>
-
-<LinearLayout
-    android:id="@+id/lnBottomtext"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingVertical="@dimen/dimen_20"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
+</androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/published"
-            android:textSize="@dimen/dimen_text_15"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/dimen_20"
-            android:layout_marginStart="@dimen/dimen_20" />
-
-        <TextView
-            android:id="@+id/txtDatePublishedComic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/dimen_text_15"
-            android:textColor="@color/colorWhite"
-            android:layout_marginLeft="@dimen/dimen_6"
-            android:layout_marginStart="@dimen/dimen_6" />
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/lnBottomtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dimen_6">
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentBottom">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/price"
-            android:textSize="@dimen/dimen_text_15"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/dimen_22"
-            android:layout_marginStart="@dimen/dimen_22" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txtPriceComic"
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/dimen_text_15"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginLeft="@dimen/dimen_20"
+                android:text="@string/published"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDatePublishedComic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_6"
+                android:layout_marginLeft="@dimen/dimen_6"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
-            android:layout_marginLeft="@dimen/dimen_5"
-            android:layout_marginStart="@dimen/dimen_5" />
+            android:layout_marginVertical="@dimen/dimen_6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_22"
+                android:layout_marginLeft="@dimen/dimen_22"
+                android:text="@string/price"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPriceComic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginLeft="@dimen/dimen_20"
+                android:text="@string/pages"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtComicCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_text_15"
+                tools:text="38" />
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pages"
-            android:textSize="@dimen/dimen_text_15"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/dimen_20"
-            android:layout_marginStart="@dimen/dimen_20" />
-
-        <TextView
-            android:id="@+id/txtComicCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/dimen_text_15"
-            android:textColor="@color/colorWhite"
-            tools:text="38"
-            android:layout_marginLeft="@dimen/dimen_5"
-            android:layout_marginStart="@dimen/dimen_5" />
-    </LinearLayout>
-</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
