@@ -84,7 +84,6 @@ class InfoComicFragment : Fragment() {
         price.text = "$ ${item.prices[0].price}"
         count.text = item.pageCount.toString()
 
-
         Picasso.get()
             .load(completePathExtension)
             .into(image)
